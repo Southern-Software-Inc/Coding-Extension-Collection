@@ -1,0 +1,36 @@
+{
+  "name": "ace-engops",
+  "version": "20.0.0",
+  "description": "Autonomous Context Engine (ACE) - High-Fidelity Engineering & Operations Layer",
+  "main": "ace-engops.sh",
+  "scripts": {
+    "setup": "chmod +x *.sh agents/*.sh && mkdir -p .ace_engops .ace_architect .ace_autonomic .ace_synapse .ace_nexus .ace_engine .ace_production logs",
+    "optimize": "./ace-engops.sh optimize",
+    "inject": "./ace-engops.sh inject",
+    "heal": "./ace-autonomic.sh optimize 'Self-Healing Session'",
+    "audit": "./agents/ace-sentinel.sh scan src/ && ./agents/ace-compliance.sh check src/",
+    "status": "./agents/ace-pulse.sh status && ./agents/ace-coverage.sh analyze src/",
+    "verify": "./agents/ace-verifier.sh validate",
+    "cost": "./agents/ace-cost-analyzer.sh attribute",
+    "test": "./agents/ace-pulse.sh status && ./agents/ace-coverage.sh analyze src/"
+  },
+  "keywords": [
+    "ace",
+    "engops",
+    "context-engine",
+    "gemini-cli",
+    "self-healing",
+    "code-analysis",
+    "token-optimization",
+    "architectural-guardrails"
+  ],
+  "author": "ACE-Engine-Core",
+  "license": "MIT",
+  "engines": {
+    "bash": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-repo/ace-engops.git"
+  }
+}

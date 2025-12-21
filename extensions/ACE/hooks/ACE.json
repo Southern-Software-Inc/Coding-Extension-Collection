@@ -1,0 +1,18 @@
+{
+  "engine": "ACE-ENGOPS",
+  "version": "20.0",
+  "hooks": {
+    "user_prompt_submit": {
+      "handler": "./ace-engops.sh optimize \"$1\"",
+      "description": "Triggers the v20.0 EngOps Pipeline."
+    },
+    "pre_task": {
+      "handler": "./ace-engops.sh inject",
+      "description": "Injects the operational and behavioral context."
+    },
+    "on_build_fail": {
+      "handler": "./ace-autonomic.sh optimize \"Build failed: $1\"",
+      "description": "Triggers self-healing."
+    }
+  }
+}

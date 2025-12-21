@@ -1,0 +1,47 @@
+description = "Runs the full ACE-EngOps v20.0 pipeline for high-fidelity context."
+prompt = """# ACE-EngOps Optimization
+I will execute the v20.0 Engineering Operations pipeline to provide the most efficient, cost-aware, and secure context for your task.
+
+**Execution Logic:**
+1. **Pre-Hook**: Run `ace-engops.sh optimize` to gather operational telemetry, shadow traces, and blast radius.
+2. **Context Synthesis**: Integrate v19.0 Architectural Guardrails (Security, Perf, Compliance).
+3. **Distillation**: Apply `ace-pruner.sh` to ensure we stay within the 12k token budget.
+4. **Verification**: Run `ace-validator.sh` to ensure structural integrity.
+
+**Tools & Sub-Agents:**
+- **Shadow-Trace**: To match production behavioral baselines.
+- **Blast-Radius**: To identify regression risks in downstream modules.
+- **Sentinel**: To redact secrets and identify OWASP risks.
+
+**Output Expectation:**
+I will provide a 'Verified Context' package and then proceed with the implementation following the `ACE.md` protocol.
+
+## Enhanced Capabilities
+### Parallel Processing
+- Executes Telemetry, Trace, Blast, and Cost agents in parallel via `ace-engops.sh`.
+### Context Distillation
+- Targets a 0.4 distillation ratio to maximize reasoning density.
+### Hooks Integration
+- **Pre-Hook**: `./ace-engops.sh optimize "{{prompt}}"`
+- **Post-Hook**: `./ace-engops.sh inject`
+"""
+version = "20.0.0"
+author = "ACE-Engine-Core"
+created = "2025-12-19"
+
+[configuration]
+parallel_processing = true
+hooks_enabled = true
+context_distillation = true
+distillation_ratio = 0.4
+persistent_memory = true
+
+[optimization]
+prompt_enhancement = true
+token_optimization = true
+distillation_threshold = 0.7
+
+[memory]
+persistence = true
+sharing = true
+persistent_categories = [ "command_patterns", "command_optimizations"]

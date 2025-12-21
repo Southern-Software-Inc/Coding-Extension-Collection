@@ -1,0 +1,18 @@
+description = "Analyzes infrastructure cost and token efficiency."
+prompt = """# ACE-Cost Attribution
+I will analyze the economic impact of the current module and the token efficiency of our session.
+
+**Analysis Parameters:**
+1. **Cloud Spend**: Run `ace-cost-analyzer.sh` to attribute infrastructure costs to the target logic.
+2. **Token Budget**: Use `ace-budgeter.sh` to evaluate the current context-to-token ratio.
+3. **Optimization**: Suggest logic changes to reduce IOPS, compute time, or memory footprint.
+
+**Goal**: Minimize Total Cost of Ownership (TCO) while maintaining performance.
+"""
+version = "20.0.0"
+author = "ACE-Engine-Core"
+created = "2025-12-19"
+
+[optimization]
+token_optimization = true
+context_distillation = true
