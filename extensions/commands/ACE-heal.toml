@@ -1,0 +1,25 @@
+description = "Diagnoses build failures and provides self-healing context."
+prompt = """# ACE-Autonomic Self-Healing
+I will analyze the current system pulse and provide a diagnosis for build or test failures.
+
+**Diagnostic Steps:**
+1. **Pulse Check**: Run `ace-pulse.sh` to identify the failure state.
+2. **Diagnosis**: Execute `ace-healer.sh` to parse `logs/build.log` and extract the stack trace.
+3. **Context Alignment**: Identify the specific files mentioned in the error via `ace-impact.sh`.
+4. **Resolution**: Propose a fix that restores the 'GREEN' status.
+
+**Constraints:**
+- Prioritize error resolution over new feature development.
+- Ensure the fix does not introduce new security risks (Sentinel Scan).
+"""
+version = "20.0.0"
+author = "ACE-Engine-Core"
+created = "2025-12-19"
+
+[configuration]
+hooks_enabled = true
+persistent_memory = true
+
+[memory]
+persistence = true
+persistent_categories = [ "command_mistakes" ]

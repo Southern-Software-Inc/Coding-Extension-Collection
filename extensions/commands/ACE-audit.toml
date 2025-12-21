@@ -1,0 +1,18 @@
+description = "Performs a deep security and compliance scan."
+prompt = """# ACE-Sentinel Security Audit
+I will perform a rigorous scan of the codebase for security vulnerabilities and policy compliance.
+
+**Audit Scope:**
+1. **Secrets**: Scan for hardcoded keys, tokens, and credentials via `ace-sentinel.sh`.
+2. **Vulnerabilities**: Identify XSS, SQLi, and insecure patterns.
+3. **Compliance**: Audit against GDPR/PII and internal architectural standards via `ace-compliance.sh`.
+
+**Output**: A detailed risk report with required mitigations.
+"""
+version = "20.0.0"
+author = "ACE-Engine-Core"
+created = "2025-12-19"
+
+[configuration]
+parallel_processing = true
+hooks_enabled = true

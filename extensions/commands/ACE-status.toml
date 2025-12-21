@@ -1,0 +1,14 @@
+description = "Checks system vitals (Build, Coverage, Pulse)."
+prompt = """# ACE-Pulse System Status
+I will provide a high-level overview of the project's operational health.
+
+**Vitals Collected:**
+1. **Build Status**: Current state of the main branch/local build.
+2. **Test Coverage**: Percentage of the codebase covered by unit tests via `ace-coverage.sh`.
+3. **Production Pulse**: Live error rates and throughput via `ace-telemetry-sync.sh`.
+
+**Goal**: Ensure the environment is stable for development.
+"""
+version = "20.0.0"
+author = "ACE-Engine-Core"
+created = "2025-12-19"
